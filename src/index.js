@@ -47,4 +47,5 @@ let userService = new UserServices();
 userService.getUsers();
 userService.addUser();
 userService.updateUser();
+userService.deleteUser();
 userService.startUserServer();

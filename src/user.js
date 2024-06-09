@@ -15,6 +15,16 @@ module.exports =  class UserServices{
         return app.use(bodyPerser.json());
     }
 
+    deleteUser(){
+        this.jsonParser();
+        app.delete("/users/:id",(req,res)=>{
+            var user = this.users.find(i=>i.id===parseInt(req.params.id));
+            if(user === undefined) return res.json(this.errorResponse());
+            this.users.unshift(user);
+            res.json(this.successResponse())
+        })
+    }
+
     getUsers(){
         this.jsonParser();
         app.get('/users',(req,res)=>{
@@ -31,9 +41,11 @@ module.exports =  class UserServices{
         this.jsonParser();
         app.put('/users/:id',(req,res)=>{
             let user = this.users.find(i=>i.id === parseInt(req.params.id));
-            // if(!user) return res.json(this.errorResponse());
-            // user.name = req.body.name;
+            if(user === undefined) return res.status(404).json(this.errorResponse());
+            user.name = req.body.name;
             res.json(this.successResponse(user));
+            console.log(user);
+            console.log(req.params.id)
         })
     }
 
