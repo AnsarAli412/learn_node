@@ -2,10 +2,10 @@
   "name": "learn_node",
   "version": "1.0.0",
   "description": "This is a repo to learn about node",
-  "main": "src/index.js",
+  "main": "src/connect.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon src/index.js"
+    "start": "nodemon src/connect.js"
   },
   "keywords": [],
   "author": "",
@@ -13,6 +13,8 @@
   "dependencies": {
     "body-parser": "^1.20.2",
     "express": "^4.19.2",
+    "mongodb": "^6.7.0",
+    "mongoose": "^8.4.1",
     "nodemon": "^3.1.3"
   }
 }
