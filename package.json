@@ -2,10 +2,10 @@
   "name": "learn_node",
   "version": "1.0.0",
   "description": "This is a repo to learn about node",
-  "main": "src/connect.js",
+  "main": "src/students/student_service.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon src/connect.js"
+    "start": "nodemon src/students/student_service.js"
   },
   "keywords": [],
   "author": "",
